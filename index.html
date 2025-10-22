@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro de Consumo Energético</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: linear-gradient(to right, #009688, #4caf50);
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    form {
+      background: #fff;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      width: 400px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #00695c;
+    }
+
+    input, button, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    button {
+      background: #4caf50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #388e3c;
+      transform: scale(1.03);
+    }
+
+    #resultado {
+      text-align: center;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <form id="formConsumo">
+    <h2>Registro de Consumo Energético</h2>
+
+    <label>Nombre del residente:</label>
+    <input type="text" id="nombre" required>
+
+    <label>Dirección:</label>
+    <input type="text" id="direccion" required>
+
+    <label>Consumo mensual (kWh):</label>
+    <input type="number" id="consumo" required min="0">
+
+    <label>Electrodomésticos principales:</label>
+    <div>
+      <input type="checkbox" name="electrodomesticos" value="Refrigerador"> Refrigerador<br>
+      <input type="checkbox" name="electrodomesticos" value="Aire acondicionado"> Aire acondicionado<br>
+      <input type="checkbox" name="electrodomesticos" value="Televisor"> Televisor<br>
+      <input type="checkbox" name="electrodomesticos" value="Lavadora"> Lavadora
+    </div>
+
+    <label>Usa energía renovable:</label>
+    <div>
+      <input type="radio" name="energia_renovable" value="Sí" required> Sí
+      <input type="radio" name="energia_renovable" value="No"> No
+    </div>
+
+    <label>Comentarios adicionales:</label>
+    <textarea id="comentarios" rows="3" placeholder="Opcional"></textarea>
+
+    <button type="submit">Registrar consumo</button>
+
+    <div id="resultado"></div>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
